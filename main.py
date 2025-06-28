@@ -1,6 +1,7 @@
 import discord
 import time
 import math
+import os
 class Client(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
@@ -24,4 +25,5 @@ intents.message_content = True
 
 
 client = Client(intents=intents)
+CLIENT_KEY = os.getenv("CLIENT_KEY")
 client.run(CLIENT_KEY)
